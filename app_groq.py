@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 from groq import Groq
 
 # 1. Page Configuration
@@ -24,7 +23,7 @@ SYSTEM_PROMPT = {
 
 # 3. Initialize Groq Client
 # Ensure GROQ_API_KEY is set in your environment variables or Streamlit secrets
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 # 4. Initialize Chat History
 if "messages" not in st.session_state:
